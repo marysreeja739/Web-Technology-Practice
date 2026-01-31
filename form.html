@@ -1,0 +1,93 @@
+<html>
+    <head>
+        <title>Forms</title>
+        <style>
+            fieldset {
+                background-color: whitesmoke;
+            }
+
+            legend {
+                text-align: center;
+                background-color: rgb(128, 128, 128);
+                color: white;
+                padding: 5px 10px;
+            }
+
+            input, select {
+                margin: 5px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <form method="GET" action="form.html">
+
+            <!-- Personal Details -->
+            <fieldset>
+                <legend>Personal</legend>
+                Name:<input type="text" autofocus></br>
+                Email:<input type="text"></br>
+                Address:<input type="text"></br>
+                Phone Number:<input type="tel"></br>
+                Blood Group:
+                <input type="text"
+                       placeholder="A+, O-, AB+"
+                       pattern="^(A|B|AB|O)[+-]$"
+                       title="Enter valid blood group (A+, A-, B+, B-, AB+, AB-, O+, O-)">
+            </fieldset>
+
+            <!-- Education Details -->
+            <fieldset>
+                <legend>Education</legend>
+                College Name:<input type="text"></br>
+                Place:<input type="text"></br>
+                CGPA:<input type="number" step="0.01"></br>
+                <label><input type="radio" name="mode">Completed</label>
+                <label><input type="radio" name="mode">Pursuing</label></br>
+                Department:
+                <input type="text" list="dept" placeholder="Select your Department"/>
+                <datalist id="dept">
+                    <option value="Information Technology">
+                    <option value="Computer Science Engineering">
+                    <option value="Civil Engineering">
+                </datalist>
+            </fieldset>
+
+            <!-- Course Selection -->
+            <fieldset>
+                <legend>Course Selection</legend>
+                Select the course:
+                <select>
+                    <optgroup label="Computer Science">
+                        <option>Cloud Computing</option>
+                        <option>Cybersecurity & Forensics</option>
+                    </optgroup>
+                    <optgroup label="Mechanical Engineering">
+                        <option>Automotive Engineering</option>
+                        <option>Fluid Mechanics</option>
+                    </optgroup>
+                </select>
+                </br>
+
+                Course Start Date:
+                <input type="date"
+                       min="2026-01-01"
+                       max="2026-06-30"
+                       required></br>
+
+                Course End Date:
+                <input type="date"
+                       min="2026-01-01"
+                       max="2026-06-30"
+                       required></br>
+            </fieldset>
+
+            <input type="checkbox" required>
+            <label>I have read all the policy and I am willing to take this course.</label></br>
+
+            Submit:<input type="submit" value="Submit"></br>
+            Clear Details:<input type="reset" value="Clear Details">
+
+        </form>
+    </body>
+</html>
