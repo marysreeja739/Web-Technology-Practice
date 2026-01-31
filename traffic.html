@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Traffic Signal</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #e6f7ff;
+        }
+
+        .signal {
+            width: 100px;
+            background-color: #333;
+            padding: 15px;
+            border-radius: 10px;
+            border: 3px solid black;
+        }
+
+        .light {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin: 10px auto;
+            border: 2px solid white;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .stand {
+            width: 20px;
+            height: 120px;
+            background-color: black;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div>
+        <div class="signal">
+            <div class="light red"></div>
+            <div class="light yellow"></div>
+            <div class="light green"></div>
+        </div>
+        <div class="stand"></div>
+    </div>
+
+</body>
+</html>
