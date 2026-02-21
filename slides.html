@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Highlight Word Slideshow</title>
+
+<style>
+body {
+    font-family: Arial;
+    background: linear-gradient(to right, #fdfbfb, #e6f0ff); /* Elegant light gradient */
+    color: #333;
+    text-align: center;
+    margin-top: 12%;
+}
+
+.slide {
+    display: none;
+    font-size: 30px;
+    padding: 20px;
+}
+
+.active {
+    display: block;
+}
+
+/* Highlighted word styles (different fonts) */
+.word1 { font-family: "Courier New"; background: #ffd966; padding: 5px; border-radius: 6px; }
+.word2 { font-family: "Georgia"; background: #ffd966; padding: 5px; border-radius: 6px; }
+.word3 { font-family: "Comic Sans MS"; background: #ffd966; padding: 5px; border-radius: 6px; }
+.word4 { font-family: "Times New Roman"; background: #ffd966; padding: 5px; border-radius: 6px; }
+.word5 { font-family: "Verdana"; background: #ffd966; padding: 5px; border-radius: 6px; }
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    margin: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    background: #4a6fa5;
+    color: white;
+}
+button:hover {
+    background: #34507a;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Sentence Slideshow</h1>
+
+<div class="slide active">
+    The future belongs to those who <span class="word1">believe</span> in dreams.
+</div>
+
+<div class="slide">
+    Success usually comes to those who are too <span class="word2">busy</span>.
+</div>
+
+<div class="slide">
+    Don't watch the clock; just <span class="word3">keep</span> going.
+</div>
+
+<div class="slide">
+    Opportunities don't happen, you <span class="word4">create</span> them.
+</div>
+
+<div class="slide">
+    Your limitation is only your <span class="word5">imagination</span>.
+</div>
+
+<button onclick="prevSlide()">Previous</button>
+<button onclick="nextSlide()">Next</button>
+
+<script>
+let current = 0;
+const slides = document.getElementsByClassName("slide");
+
+function showSlide(index) {
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove("active");
+    }
+    slides[index].classList.add("active");
+}
+
+function nextSlide() {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+}
+
+function prevSlide() {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+}
+</script>
+
+</body>
+</html>
